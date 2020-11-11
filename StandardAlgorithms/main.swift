@@ -14,3 +14,11 @@ let a = 5
 print("The value of a is \(a)")
 
 print("hello world")
+
+var temp: [Int] = []
+
+for i in 0...20{
+    temp.append(i*i)
+}
+
+print(temp)
