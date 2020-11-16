@@ -39,7 +39,17 @@ class SortingTest: XCTestCase {
     }
     
     func testMergeSortWithIntegerArrayReturnsSortedArray() {
-            
+        //arrange
+        let sorting = Sorting()
+        let testData1 = [1,4,6,7]
+        let testData2 = [1,2,5,9]
+        let expected = [1,1,2,4,5,6,7,9]
+        
+        //act
+        let result = sorting.merge(data1: testData1, data2: testData2)
+        
+        //assert
+        XCTAssertEqual(result, expected)
     }
     
 }

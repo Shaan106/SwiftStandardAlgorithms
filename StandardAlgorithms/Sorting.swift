@@ -9,6 +9,7 @@ import Foundation
 
 class Sorting {
     
+    //bubbleSort
     func bubbleSort(data: [Int]) -> [Int] {
         var sortArray = data
         
@@ -35,5 +36,25 @@ class Sorting {
         }
     
     return sortArray
+    }
+    
+    
+    //mergeSort
+    func merge(data1:[Int], data2:[Int]) -> [Int] {
+        var sortArray1 = data1
+        var sortArray2 = data2
+        var res:[Int] = []
+        
+        var merged = false
+        
+        while merged == false {
+            if data1[0] >= data2[0] {
+                res.append(data1[0])
+            }else{
+                res.append(data2[0])
+            }
+        }
+        
+        return res
     }
 }
