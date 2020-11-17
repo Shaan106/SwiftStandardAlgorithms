@@ -43,18 +43,36 @@ class Sorting {
     func merge(data1:[Int], data2:[Int]) -> [Int] {
         var sortArray1 = data1
         var sortArray2 = data2
-        var res:[Int] = []
+        var result:[Int] = []
         
-        var merged = false
-        
-        while merged == false {
-            if data1[0] >= data2[0] {
-                res.append(data1[0])
+        while sortArray1.count > 0 && sortArray2.count > 0 {
+            
+            if sortArray1[0] <= sortArray2[0] {
+                result.append(sortArray1[0])
+                sortArray1 = Array( sortArray1.dropFirst() )
             }else{
-                res.append(data2[0])
+                result.append(sortArray2[0])
+                sortArray2 = Array( sortArray2.dropFirst() )
             }
+            
+            print(result)
         }
         
-        return res
+        if sortArray1.count != 0 {
+            result.append(contentsOf: sortArray1)
+        }else if sortArray2.count != 0 {
+            result.append(contentsOf: sortArray2)
+        }
+        
+    return result
     }
+    
+    //split arrays into smallest parts (for merge sort)
+    
+    func splitIntoSmallestParts(data:[Int]) -> [Int] {
+        
+        
+        return [1]
+    }
+    
 }
