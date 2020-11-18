@@ -8,6 +8,7 @@
 import XCTest
 
 // cmd + b to build, cmd + u to test
+//have to start function name with "test" for it to test
 
 class SortingTest: XCTestCase {
     
