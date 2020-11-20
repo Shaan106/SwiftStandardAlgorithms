@@ -22,9 +22,45 @@ class Unknown {
     }
     
     //problem 2
-    func findModalValue(array: [Int]) -> Int {
+    func findModalValue(array: [Int]) -> Double {
         var valueDict = [0:0]
-        return 1
+        var maxValue = (number: 0, value: 0)
+        
+        for number in array {
+            
+            if let previousValue = valueDict[number] {
+                valueDict[number] = Int(previousValue) + 1
+                let newValue = Int(previousValue) + 1
+                
+                if newValue > maxValue.value {
+                    maxValue.number = number
+                    maxValue.value = newValue
+                }
+                
+            }else{
+                valueDict[number] = 1
+                
+                let newValue = 1
+                
+                if newValue > maxValue.value {
+                    maxValue.number = number
+                    maxValue.value = newValue
+                }
+                
+            }
+        }
+        
+        var totalOfNumbersWithMaxValue = 0
+        var numberOfNumbersWithMaxValue = 0
+        
+        for item in valueDict {
+            if item.value == maxValue.value{
+                totalOfNumbersWithMaxValue = totalOfNumbersWithMaxValue + item.key
+                numberOfNumbersWithMaxValue = numberOfNumbersWithMaxValue + 1
+            }
+        }
+        
+        return  Double(totalOfNumbersWithMaxValue) / Double(numberOfNumbersWithMaxValue)
     }
     
 }

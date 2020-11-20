@@ -79,7 +79,7 @@ class SortingTest: XCTestCase {
     
     //single input split
     
-    func testSplitWithIntegerArrayReturnsSplitArrays() {
+    func testMergeSortWithIntegerArrayReturnsSortedArray() {
         //arrange
         let sorting = Sorting()
         let testData = [3,8,4,5,7]

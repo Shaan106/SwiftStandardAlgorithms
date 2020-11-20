@@ -18,7 +18,6 @@ class Sorting {
             var didSort = false
             
             for i in 1...(sortArray.count-1) {
-                print(sortArray)
                 
                 if sortArray[i-1] > sortArray[i] {
                     
@@ -55,7 +54,6 @@ class Sorting {
                 sortArray2 = Array( sortArray2.dropFirst() )
             }
             
-            print(result)
         }
         
         if sortArray1.count != 0 {
@@ -70,9 +68,15 @@ class Sorting {
     //split arrays into smallest parts (for merge sort)
     
     func splitIntoSmallestParts(data:[Int]) -> [Int] {
+        if data.count <= 1{
+            return data
+        }else if data.count >= 2{
+            let fistArray = data.prefix( (data.count-1)/2 )
+            let secondArray = data.suffix( (data.count) - (data.count-1)/2 )
+            print(fistArray,secondArray, data)
+        }
         
-        
-        return [1]
+        return data
     }
     
 }
