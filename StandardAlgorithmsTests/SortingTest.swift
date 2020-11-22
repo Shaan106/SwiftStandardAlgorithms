@@ -77,18 +77,36 @@ class SortingTest: XCTestCase {
         }
     }
     
-    //single input split
+    //single input sort
     
     func testMergeSortWithIntegerArrayReturnsSortedArray() {
         //arrange
         let sorting = Sorting()
         let testData = [3,8,4,5,7]
+        //let testData = [1,2,3,4,5,6,7]
         let expected = [3,4,5,7,8]
         
         //act
-        let result = sorting.splitIntoSmallestParts(data: testData)
+        let result = sorting.mergeSort(data: testData)
         
         //assert
         XCTAssertEqual(result, expected)
+    }
+    
+    //multiple input sort
+    
+    func testMergeSortWithIntegerArraysReturnsSortedArrays() {
+        //arrange
+        let sorting = Sorting()
+        let testData = [(data1: [4,6,2,3,5,54,12,4,2], expected: [2,2,3,4,4,5,6,12,54]),
+                        (data1: [6,5,4,3,2,1], expected: [1,2,3,4,5,6]),
+                        (data1: [], expected: [])]
+        //act
+        //assert
+        
+        for test in testData {
+            let result = sorting.mergeSort(data: test.data1)
+            XCTAssertEqual(result, test.expected)
+        }
     }
 }

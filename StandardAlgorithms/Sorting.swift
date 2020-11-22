@@ -67,16 +67,15 @@ class Sorting {
     
     //split arrays into smallest parts (for merge sort)
     
-    func splitIntoSmallestParts(data:[Int]) -> [Int] {
+    func mergeSort(data:[Int]) -> [Int] {
         if data.count <= 1{
             return data
-        }else if data.count >= 2{
-            let fistArray = data.prefix( (data.count-1)/2 )
-            let secondArray = data.suffix( (data.count) - (data.count-1)/2 )
-            print(fistArray,secondArray, data)
+        }else {
+            let firstArray = data.prefix( (data.count)/2 )
+            let secondArray = data.suffix( (data.count) - (data.count)/2 )
+            return merge( data1: mergeSort(data: Array(firstArray)), data2: mergeSort(data: Array(secondArray)) )
         }
-        
-        return data
+
     }
     
 }
