@@ -14,6 +14,9 @@
 		7BCC2124255EABEC006D51CE /* SortingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCC2123255EABEC006D51CE /* SortingTest.swift */; };
 		7BCC212A255EACC7006D51CE /* Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCC2129255EACC7006D51CE /* Sorting.swift */; };
 		7BCC212D255EAD43006D51CE /* Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCC2129255EACC7006D51CE /* Sorting.swift */; };
+		CD110186256B22C80025C7F3 /* Searching.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD110185256B22C80025C7F3 /* Searching.swift */; };
+		CD110188256B23410025C7F3 /* SearchingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD110187256B23410025C7F3 /* SearchingTest.swift */; };
+		CD110189256B2A580025C7F3 /* Searching.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD110185256B22C80025C7F3 /* Searching.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +40,8 @@
 		7BCC211D255EAA90006D51CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BCC2123255EABEC006D51CE /* SortingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingTest.swift; sourceTree = "<group>"; };
 		7BCC2129255EACC7006D51CE /* Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorting.swift; sourceTree = "<group>"; };
+		CD110185256B22C80025C7F3 /* Searching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searching.swift; sourceTree = "<group>"; };
+		CD110187256B23410025C7F3 /* SearchingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +85,7 @@
 			children = (
 				7B33FBE3255BF9B900A927EF /* main.swift */,
 				7BCC2129255EACC7006D51CE /* Sorting.swift */,
+				CD110185256B22C80025C7F3 /* Searching.swift */,
 				7B34E445256533B800B93791 /* unknownAlgorithms.swift */,
 			);
 			path = StandardAlgorithms;
@@ -90,6 +96,7 @@
 			children = (
 				7B34E4522565357500B93791 /* unknownAlgorithmsTest.swift */,
 				7BCC2123255EABEC006D51CE /* SortingTest.swift */,
+				CD110187256B23410025C7F3 /* SearchingTest.swift */,
 				7BCC211D255EAA90006D51CE /* Info.plist */,
 			);
 			path = StandardAlgorithmsTests;
@@ -185,6 +192,7 @@
 			files = (
 				7BCC212A255EACC7006D51CE /* Sorting.swift in Sources */,
 				7B33FBE4255BF9B900A927EF /* main.swift in Sources */,
+				CD110186256B22C80025C7F3 /* Searching.swift in Sources */,
 				7B34E446256533B800B93791 /* unknownAlgorithms.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,9 +201,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD110189256B2A580025C7F3 /* Searching.swift in Sources */,
 				7B34E456256535A200B93791 /* unknownAlgorithms.swift in Sources */,
 				7B34E4532565357500B93791 /* unknownAlgorithmsTest.swift in Sources */,
 				7BCC212D255EAD43006D51CE /* Sorting.swift in Sources */,
+				CD110188256B23410025C7F3 /* SearchingTest.swift in Sources */,
 				7BCC2124255EABEC006D51CE /* SortingTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
