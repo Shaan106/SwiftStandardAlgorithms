@@ -43,6 +43,37 @@ class SortingTest: XCTestCase {
         }
     }
     
+    //performance test bubble sort on size n = 5,50,500
+    
+    func testBubbleSortPerformanceWithIntegerArraysOfSizes5and50and500() {
+        let sorting = Sorting()
+        
+        let dataSizes = [5,50,500]
+        
+        var testDataOfSizeN = [ 1: [1] ]
+        
+        for dataSize in dataSizes {
+            var tempArray: [Int] = []
+            
+            for _ in 1...dataSize {
+                tempArray.append( Int.random(in: 0...500) )
+            }
+            
+            testDataOfSizeN[dataSize] = tempArray
+        }
+        
+        let choiceOfSizeToTest = 50 //can be 5,50,500
+        
+        self.measure {
+            if let testData = testDataOfSizeN[choiceOfSizeToTest] {
+                
+                let _ = sorting.bubbleSort(data: testData)
+                
+            }
+        }
+        
+    }
+    
     //MERGE SORT TESTING
     
     //single input merge testing
@@ -77,7 +108,7 @@ class SortingTest: XCTestCase {
         }
     }
     
-    //single input sort
+    //single input merge sort
     
     func testMergeSortWithIntegerArrayReturnsSortedArray() {
         //arrange
@@ -93,7 +124,7 @@ class SortingTest: XCTestCase {
         XCTAssertEqual(result, expected)
     }
     
-    //multiple input sort
+    //multiple input merge sort
     
     func testMergeSortWithIntegerArraysReturnsSortedArrays() {
         //arrange
@@ -109,6 +140,39 @@ class SortingTest: XCTestCase {
             XCTAssertEqual(result, test.expected)
         }
     }
+    
+    //performance test merge sort on size n = 5,50,500
+    
+    func testMergeSortPerformanceWithIntegerArraysOfSizes5and50and500() {
+        let sorting = Sorting()
+        
+        let dataSizes = [5,50,500]
+        
+        var testDataOfSizeN = [ 1: [1] ]
+        
+        for dataSize in dataSizes {
+            var tempArray: [Int] = []
+            
+            for _ in 1...dataSize {
+                tempArray.append( Int.random(in: 0...500) )
+            }
+            
+            testDataOfSizeN[dataSize] = tempArray
+        }
+        
+        let choiceOfSizeToTest = 50 //can be 5,50,500
+        
+        self.measure {
+            if let testData = testDataOfSizeN[choiceOfSizeToTest] {
+                
+                let _ = sorting.mergeSort(data: testData)
+                
+            }
+        }
+        
+    }
+    
+    //QUICK SORT TESTING
     
     //quick sort
     
@@ -128,6 +192,39 @@ class SortingTest: XCTestCase {
         }
     }
     
+    //performance test quick sort on size n = 5,50,500
+    
+    func testQuickSortPerformanceWithIntegerArraysOfSizes5and50and500() {
+        let sorting = Sorting()
+        
+        let dataSizes = [5,50,500]
+        
+        var testDataOfSizeN = [ 1: [1] ]
+        
+        for dataSize in dataSizes {
+            var tempArray: [Int] = []
+            
+            for _ in 1...dataSize {
+                tempArray.append( Int.random(in: 0...500) )
+            }
+            
+            testDataOfSizeN[dataSize] = tempArray
+        }
+        
+        let choiceOfSizeToTest = 50 //can be 5,50,500
+        
+        self.measure {
+            if let testData = testDataOfSizeN[choiceOfSizeToTest] {
+                
+                let _ = sorting.quickSort(unsortedArray: testData)
+                
+            }
+        }
+        
+    }
+    
+    //INSERTION SORT TESTING
+    
     //insertion sort
     
     func testInestionSortWithIntegerArraysReturnsSortedArrays() {
@@ -144,4 +241,36 @@ class SortingTest: XCTestCase {
             XCTAssertEqual(result, test.expected)
         }
     }
+    
+    //performance test bubble sort on size n = 5,50,500
+    
+    func testInsertionSortPerformanceWithIntegerArraysOfSizes5and50and500() {
+        let sorting = Sorting()
+        
+        let dataSizes = [5,50,500]
+        
+        var testDataOfSizeN = [ 1: [1] ]
+        
+        for dataSize in dataSizes {
+            var tempArray: [Int] = []
+            
+            for _ in 1...dataSize {
+                tempArray.append( Int.random(in: 0...500) )
+            }
+            
+            testDataOfSizeN[dataSize] = tempArray
+        }
+        
+        let choiceOfSizeToTest = 50 //can be 5,50,500
+        
+        self.measure {
+            if let testData = testDataOfSizeN[choiceOfSizeToTest] {
+                
+                let _ = sorting.insertionSort(data: testData)
+                
+            }
+        }
+        
+    }
+    
 }

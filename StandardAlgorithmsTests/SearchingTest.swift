@@ -9,6 +9,8 @@ import XCTest
 
 class SearchingTest: XCTestCase {
     
+    //LINEAR SEARCH TEST
+    
     //linear search test
     func testLinearSearchWithIntegerArraysReturnsIntegersAndLocations() {
         //arrange
@@ -28,6 +30,72 @@ class SearchingTest: XCTestCase {
         
     }
     
+    //LINEAR SEARCH PERFORMANCE TESTING
+    
+    //linear search performance test, n = 5
+    
+    func testLinearSearchPerformanceWithIntegerArrayWhereSizeIs5() {
+        
+        let searching = Searching()
+        
+        let dataOfSizeN = [5 : ( inputArray: [1,2,3,4,5], findValue: 8 )]
+        
+        self.measure {
+            if let data = dataOfSizeN[5] {
+                let _ = searching.linearSearch(data: data.inputArray, findValue: Int.random(in: 0...5))
+            }
+        }
+        
+    }
+    
+    //linear search performance test, n = 50
+    
+    func testLinearSearchPerformanceWithIntegerArrayWhereSizeIs50() {
+        
+        let searching = Searching()
+        
+        var dataOfSizeN = [5 : ( inputArray: [1,2,3,4,5], findValue: 8 )]
+        
+        var tempInputArray: [Int] = []
+        
+        for i in 1...50 {
+            tempInputArray.append(i)
+        }
+        
+        dataOfSizeN[50] = ( inputArray: tempInputArray, findValue : 39 )
+        
+        self.measure {
+            if let data = dataOfSizeN[50] {
+                let _ = searching.linearSearch(data: data.inputArray, findValue: Int.random(in: 0...50))
+            }
+        }
+    }
+    
+    //linear search performance test, n = 500
+    
+    func testLinearSearchPerformanceWithIntegerArrayWhereSizeIs500() {
+        
+        let searching = Searching()
+        
+        var dataOfSizeN = [5 : ( inputArray: [1,2,3,4,5], findValue: 8 )]
+        
+        var tempInputArray: [Int] = []
+        
+        for i in 1...500 {
+            tempInputArray.append(i)
+        }
+        
+        dataOfSizeN[500] = ( inputArray: tempInputArray, findValue : 39 )
+        
+        self.measure {
+            if let data = dataOfSizeN[500] {
+                let _ = searching.linearSearch(data: data.inputArray, findValue: Int.random(in: 0...500))
+            }
+        }
+    }
+
+    //BINARY SEARCH TESTING
+    
     //binary search test
     func testBinarySearchWithIntegerArraysReturnsBooleans() {
         //arrange
@@ -46,6 +114,69 @@ class SearchingTest: XCTestCase {
         }
         
     }
-
+    
+    //BINARY SEARCH PERFORMANCE TESTING
+    
+    //linear search performance test, n = 5
+    
+    func testBinarySearchPerformanceWithIntegerArrayWhereSizeIs5() {
+        
+        let searching = Searching()
+        
+        let dataOfSizeN = [5 : ( inputArray: [1,2,3,4,5], findValue: 8 )]
+        
+        self.measure {
+            if let data = dataOfSizeN[5] {
+                let _ = searching.binarySearch(data: data.inputArray, findValue: Int.random(in: 0...5))
+            }
+        }
+        
+    }
+    
+    //linear search performance test, n = 50
+    
+    func testBinarySearchPerformanceWithIntegerArrayWhereSizeIs50() {
+        
+        let searching = Searching()
+        
+        var dataOfSizeN = [5 : ( inputArray: [1,2,3,4,5], findValue: 8 )]
+        
+        var tempInputArray: [Int] = []
+        
+        for i in 1...50 {
+            tempInputArray.append(i)
+        }
+        
+        dataOfSizeN[50] = ( inputArray: tempInputArray, findValue : 39 )
+        
+        self.measure {
+            if let data = dataOfSizeN[50] {
+                let _ = searching.binarySearch(data: data.inputArray, findValue: Int.random(in: 0...50))
+            }
+        }
+    }
+    
+    //linear search performance test, n = 500
+    
+    func testBinarySearchPerformanceWithIntegerArrayWhereSizeIs500() {
+        
+        let searching = Searching()
+        
+        var dataOfSizeN = [5 : ( inputArray: [1,2,3,4,5], findValue: 8 )]
+        
+        var tempInputArray: [Int] = []
+        
+        for i in 1...500 {
+            tempInputArray.append(i)
+        }
+        
+        dataOfSizeN[500] = ( inputArray: tempInputArray, findValue : 39 )
+        
+        self.measure {
+            if let data = dataOfSizeN[500] {
+                let _ = searching.binarySearch(data: data.inputArray, findValue: Int.random(in: 0...500))
+            }
+        }
+    }
 
 }

@@ -108,6 +108,8 @@ class Sorting {
       }
     }
     
+    
+    //insertion Sort
     func insertionSort(data: [Int]) -> [Int] {
         
         if data.count == 0{

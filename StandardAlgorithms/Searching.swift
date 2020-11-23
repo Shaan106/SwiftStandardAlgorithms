@@ -37,8 +37,6 @@ class Searching {
         
         let midValue = data[data.count/2]
         
-        print(midValue, data)
-        
         if midValue == findValue {
             
             return true
