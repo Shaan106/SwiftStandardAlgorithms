@@ -65,7 +65,7 @@ class Sorting {
     return result
     }
     
-    //split arrays into smallest parts (for merge sort)
+    //mergeSort
     
     func mergeSort(data:[Int]) -> [Int] {
         if data.count <= 1{
@@ -76,6 +76,66 @@ class Sorting {
             return merge( data1: mergeSort(data: Array(firstArray)), data2: mergeSort(data: Array(secondArray)) )
         }
 
+    }
+    
+    //quick sort - from repl
+    
+    func quickSort(unsortedArray: [Int]) -> [Int] {
+
+      if unsortedArray.count <= 1 {
+        return unsortedArray
+      }else{
+        
+        let pivot = unsortedArray[0]
+        var rightArray = [Int]()
+        var leftArray = [Int]()
+
+        for i in 1...(unsortedArray.count-1) {
+          if unsortedArray[i] >= pivot {
+            rightArray.append(unsortedArray[i])
+          }else{
+            leftArray.append(unsortedArray[i])
+          }
+        }
+
+        var finalArray = [Int]()
+
+        finalArray.append(contentsOf: quickSort(unsortedArray: leftArray))
+        finalArray.append(pivot)
+        finalArray.append(contentsOf: quickSort(unsortedArray: rightArray))
+
+        return finalArray
+      }
+    }
+    
+    func insertionSort(data: [Int]) -> [Int] {
+        
+        if data.count == 0{
+            return []
+        }
+        
+        var outputArray = data
+        
+        let dataLength = outputArray.count
+        
+        for i in 1...(dataLength - 1) {
+            
+            let currentNumber = outputArray[i]
+            
+            var position = i
+            
+            while position > 0 && outputArray[position - 1] > currentNumber {
+                
+                outputArray[position] = outputArray[position-1]
+                position = position - 1
+                
+            }
+            
+            outputArray[position] = currentNumber
+            
+        }
+        
+        return outputArray
     }
     
 }

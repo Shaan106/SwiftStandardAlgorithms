@@ -109,4 +109,39 @@ class SortingTest: XCTestCase {
             XCTAssertEqual(result, test.expected)
         }
     }
+    
+    //quick sort
+    
+    func testQuickSortWithIntegerArraysReturnsSortedArrays() {
+        
+        //arrange
+        let sorting = Sorting()
+        let testData = [(data1: [4,6,2,3,5,54,12,4,2], expected: [2,2,3,4,4,5,6,12,54]),
+                        (data1: [6,5,4,3,2,1], expected: [1,2,3,4,5,6]),
+                        (data1: [], expected: [])]
+        //act
+        //assert
+        
+        for test in testData {
+            let result = sorting.quickSort(unsortedArray: test.data1)
+            XCTAssertEqual(result, test.expected)
+        }
+    }
+    
+    //insertion sort
+    
+    func testInestionSortWithIntegerArraysReturnsSortedArrays() {
+        //arrange
+        let sorting = Sorting()
+        let testData = [(data1: [4,6,2,3,5,54,12,4,2], expected: [2,2,3,4,4,5,6,12,54]),
+                        (data1: [6,5,4,3,2,1], expected: [1,2,3,4,5,6]),
+                        (data1: [], expected: [])]
+        //act
+        //assert
+        
+        for test in testData {
+            let result = sorting.insertionSort(data: test.data1)
+            XCTAssertEqual(result, test.expected)
+        }
+    }
 }
